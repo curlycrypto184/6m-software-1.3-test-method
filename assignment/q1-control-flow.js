@@ -11,5 +11,13 @@ const env = "DEV"; // Toggle between these possible values "DEV" | "STAGE" | "PR
 let databaseCredential = "devuser:password";
 
 // Task: Add code here
-
+if (env == "STAGE") {
+    databaseCredential = "stageuser:password";
+}
+else if (env == "PROD") {
+    databaseCredential = "produser:password";
+}
+else {
+    console.log("no change to environemnt variable");
+}
 console.log(`Database credential for environment ${env} is ${databaseCredential}`);
